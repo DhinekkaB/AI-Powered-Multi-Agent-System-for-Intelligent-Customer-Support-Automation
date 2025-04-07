@@ -47,28 +47,19 @@ Modern enterprises face increased customer support loads with slow response time
 ## 📁 Project Structure
 
 AI-Powered-Multi-Agent-System-for-Intelligent-Customer-Support-Automation/
-
+AI-Powered-Multi-Agent-System-for-Intelligent-Customer-Support-Automation/
 ├── main.py                  # FastAPI entrypoint
-
 ├── agents/
-
-   ├── summary_agent.py
-
-   ├── action_agent.py
-
-   ├── resolution_agent.py
-
-   ├── routing_agent.py
-  
-   └── time_agent.py
-
+│   ├── summary_agent.py
+│   ├── action_agent.py
+│   ├── resolution_agent.py
+│   ├── routing_agent.py
+│   └── time_agent.py
 ├── memory/
-   └── vector_store.py      # Pinecone client
-
+│   └── vector_store.py      # Pinecone client
 ├── utils/
-   └── llm_helpers.py       # OpenAI wrappers
-
+│   └── llm_helpers.py       # OpenAI wrappers
 ├── .env                     # For API keys
-
 └── requirements.txt
+
 
