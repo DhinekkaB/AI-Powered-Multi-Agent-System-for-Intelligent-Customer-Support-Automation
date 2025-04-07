@@ -1,4 +1,7 @@
-class SummaryAgent:
-    def summarize(self, text):
-        # Placeholder summary logic
-        return f"Summary: Customer reports double charge on recent order."
+from utils.llm_helpers import get_llm
+
+llm = get_llm()
+
+def summarize_query(query):
+    prompt = f"Summarize the following customer query: {query}"
+    return llm(prompt)
