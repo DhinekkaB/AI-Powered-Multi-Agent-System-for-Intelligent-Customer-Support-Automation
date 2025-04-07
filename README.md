@@ -1,101 +1,63 @@
-## 🧠 Multi-Agent Customer Support System
+# AI-Powered Multi-Agent Customer Support System
 
-This project implements a modular, AI-powered multi-agent system designed to streamline customer support operations in large enterprises. Each agent is responsible for a specific task in the support pipeline, allowing seamless task automation and faster resolution times.
-
----
-
-## 🔍 Problem Statement
-Modern enterprises face challenges with:
-- Slow and inconsistent responses
-- Manual ticket routing and prioritization
-- Inability to utilize historical resolutions efficiently
-
-Our solution introduces a multi-agent architecture to:
-- Automatically summarize queries
-- Extract action items
-- Recommend resolutions
-- Route tasks intelligently
-- Estimate and reduce resolution time
+A modular, intelligent customer support automation system powered by **LangChain**, **OpenAI**, **Pinecone**, and **FastAPI**. This system uses collaborative agents to streamline and automate support processes including summarization, action extraction, resolution recommendation, routing, and response generation.
 
 ---
 
-## 🚀 System Overview
-The architecture consists of the following intelligent agents:
+## Problem Statement
 
-1. **InputAgent** – Simulates customer query intake.
-2. **SummaryAgent** – Summarizes the key points from the query.
-3. **ActionExtractionAgent** – Extracts tasks to be performed.
-4. **ResolutionAgent** – Recommends a resolution strategy.
-5. **RoutingAgent** – Determines the appropriate team for task routing.
-6. **TimeEstimationAgent** – Estimates time required to solve the issue.
-7. **ResponseGeneratorAgent** – Forms the final response to the customer.
+Modern enterprises face increased customer support loads with slow response times, inefficient task routing, and inconsistent resolutions. This system solves that by enabling multiple AI agents to work together and automate each step in the support workflow.
 
 ---
 
-## 🛠 Technologies Used
-- Python 3
-- Modular OOP-based Agent Design
+## Features
+
+- ✍️ Summarizes customer queries  
+- ✅ Extracts actionable tasks  
+- 🧠 Recommends resolutions using semantic search  
+- 🔀 Routes tasks to appropriate teams  
+- ⏱️ Estimates resolution time  
+- 💬 Generates final customer response  
 
 ---
 
-## 🧩 Folder Structure
-```
-multi_agent_customer_support/
+##  Multi-Agent Architecture
+
+| Agent                 | Responsibility                                         |
+|----------------------|---------------------------------------------------------|
+| **SummarizerAgent**  | Uses OpenAI to summarize the customer query             |
+| **ActionAgent**      | Extracts tasks/action items from the summary            |
+| **ResolutionAgent**  | Uses Pinecone vector DB to recommend a past solution    |
+| **RoutingAgent**     | Assigns task to the correct internal support team       |
+| **TimeAgent**        | Predicts estimated resolution time                      |
+| **ResponseAgent**    | Compiles the final response to be sent to the customer  |
+
+---
+
+## 🛠️ Technologies Used
+
+- [LangChain](https://www.langchain.com/) – LLM Orchestration  
+- [OpenAI API](https://openai.com) – Summarization, reasoning, generation  
+- [Pinecone](https://www.pinecone.io/) – Semantic vector search  
+- [FastAPI](https://fastapi.tiangolo.com/) – API development  
+- [python-dotenv](https://pypi.org/project/python-dotenv/) – Env management  
+
+---
+
+## 📁 Project Structure
+
+AI-Powered-Multi-Agent-System-for-Intelligent-Customer-Support-Automation/
+├── main.py                  # FastAPI entrypoint
 ├── agents/
-│   ├── input_agent.py
 │   ├── summary_agent.py
-│   ├── action_extraction_agent.py
+│   ├── action_agent.py
 │   ├── resolution_agent.py
 │   ├── routing_agent.py
-│   ├── time_estimation_agent.py
-│   └── response_generator_agent.py
-└── main.py
-```
+│   └── time_agent.py
+├── memory/
+│   └── vector_store.py      # Pinecone client
+├── utils/
+│   └── llm_helpers.py       # OpenAI wrappers
+├── .env                     # For API keys
+└── requirements.txt
 
----
-
-## 🧪 Demo Output
-```
-[Multi-Agent System Output]
-User Query: I have been charged twice for my last order. Please help!
-Summary: Summary: Customer reports double charge on recent order.
-Actions: ['Check transaction history', 'Initiate refund']
-Resolution: Verify duplicate charge and issue refund if confirmed.
-Routing: Task routed to: Billing Team
-Time Estimate: Estimated resolution time: 2 hours
-
-Final Response:
-Dear Customer,
-
-Verify duplicate charge and issue refund if confirmed.
-Estimated resolution time: 2 hours
-
-Thank you for your patience.
-```
-
----
-
-## ▶️ Running the Project
-```bash
-cd multi_agent_customer_support
-python main.py
-```
-
----
-
-## 📦 Future Improvements
-- Integrate with actual ticketing systems (e.g., Jira, Zendesk)
-- Use LLMs for summarization & intent recognition
-- Add web UI for customer input
-
----
-
-## 🤖 Authors
-Developed for a customer support automation hackathon challenge.
-
----
-
-## 📄 License
-MIT License
-
----
